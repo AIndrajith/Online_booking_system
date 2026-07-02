@@ -11,7 +11,7 @@ engine = create_engine(
     max_overflow=10,
     pool_recycle=1800,
     connect_args={
-        "keepalive":1,
+        "keepalives":1,
         "keepalives_idle":60,  # 60 seconds
         "keepalives_interval":10,
         "keepalives_count":5

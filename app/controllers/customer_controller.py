@@ -23,6 +23,8 @@ class Customer():
             db.commit()
             db.refresh(data)
 
+            return SuccessResponseModel(data, "successfully response")
+
         except Exception as e:
             print(str(e))
             return ErrorResponseModel(str(e), 400)
@@ -57,7 +59,7 @@ class Customer():
 
     def delete_customer(self,customer_id):
         try:
-            customer = db.query(pg_models.Customer.customer_id).filter(
+            customer = db.query(pg_models.Customer).filter(
                 pg_models.Customer.customer_id == customer_id
             ).first()
 
