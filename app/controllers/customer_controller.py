@@ -1,5 +1,7 @@
 import uuid
 
+from sqlalchemy.orm import Session
+
 from app.db.postgresDB import db_connection
 from app.models import pg_models
 from app.response.response_model import ErrorResponseModel, SuccessResponseModel
